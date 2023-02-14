@@ -1,4 +1,4 @@
- def registry = 'https://sowmyaraj435.jfrog.io/'
+ def registry = 'https://sowmyaraj435.jfrog.io'
 pipeline {
     agent{
         node{

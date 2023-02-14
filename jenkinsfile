@@ -1,4 +1,4 @@
- def registry = 'https://sowmyaraj435.jfrog.io'
+ def registry = 'https://sowmyaraj15.jfrog.io'
 pipeline {
     agent{
         node{
@@ -55,13 +55,13 @@ pipeline {
         steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
-                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"jfrog"
+                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"jfrog1111"
                      def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                      def uploadSpec = """{
                           "files": [
                             {
                               "pattern": "jarstaging/(*)",
-                              "target": " somya-libs-release-local/{1}",
+                              "target": "twitter_trend-libs-release-local/{1}",
                               "flat": "false",
                               "props" : "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]

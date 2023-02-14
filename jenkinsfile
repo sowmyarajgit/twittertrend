@@ -19,7 +19,7 @@ pipeline {
         stage('build'){
             
             steps{
-            sh 'mvn clean install'
+            sh 'mvn clean deploy'
         }        
         }
     
@@ -61,7 +61,7 @@ pipeline {
                           "files": [
                             {
                               "pattern": "jarstaging/(*)",
-                              "target": " ttwitter-libs-release-local/{1}",
+                              "target": " somya-libs-release-local/{1}",
                               "flat": "false",
                               "props" : "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]

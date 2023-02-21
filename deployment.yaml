@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twitter-trend
+  namespace: twitter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  twitter-trend
+  template:
+    metadata:
+      labels:
+        app:  twitter-trend
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name:  twitter
+        image: sowmyaraj15.jfrog.io/twitter-docker/twitter:2.0.3
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000

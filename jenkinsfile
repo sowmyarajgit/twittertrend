@@ -104,6 +104,7 @@ pipeline {
           steps {
             script {
                echo '<--------------- Deploy Started --------------->'
+               git update-index --chmod=+x deploy.sh
                sh './deploy.sh'
                echo '<--------------- Deploy Ends --------------->'
             }

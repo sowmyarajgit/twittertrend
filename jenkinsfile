@@ -104,7 +104,7 @@ pipeline {
        steps {
          script {
             echo '<--------------- Helm Deploy Started --------------->'
-            sh 'helm install twittert  twitter-helm-0.1.2.tgz'
+            sh './deploy.sh'
             echo '<--------------- Helm deploy Ends --------------->'
          }
        }
